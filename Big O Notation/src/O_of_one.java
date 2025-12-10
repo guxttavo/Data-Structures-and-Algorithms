@@ -18,16 +18,10 @@ public class O_of_one {
         int[] arr = {10, 20, 30, 40, 50};
         System.out.println(arr[2]);
 
-        // ==========================
-        // Operações simples com variáveis
-        // O(1)
         int x = 100;
         int y = x + 5;
         System.out.println(y);
 
-        // ==========================
-        // Inserção em lista (append equivalente em Java)
-        // Amortizado O(1)
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
@@ -37,19 +31,13 @@ public class O_of_one {
 
         System.out.println(list);
 
-        // ==========================
-        // Operações com HashMap (dicionário em Python)
-        // Busca, inserção e atualização: O(1) em média
         HashMap<String, Integer> data = new HashMap<>();
         data.put("a", 1);
         data.put("b", 2);
         data.put("c", 3);
         data.put("d", 4);
 
-        // Busca O(1)
         System.out.println(data.get("a"));
-
-        // Atualização O(1)
         data.put("b", 5);
         System.out.println(data.get("b"));
     }

@@ -1,3 +1,5 @@
+package Chessgame;
+
 public class Board {
 
     private char[][] grid = new char[8][8];
@@ -35,7 +37,6 @@ public class Board {
         }
     }
 
-
     public void printBoard() {
         for (int row = 0; row < 8; row++) {
             System.out.print((8 - row) + " ");
@@ -46,6 +47,18 @@ public class Board {
         }
 
         System.out.println("  a b c d e f g h");
+    }
+
+    public void move(int fromRow, int fromCol, int toRow, int toCol) {
+        char piece = grid[fromRow][fromCol];
+
+        if (piece == '.') {
+            System.out.println("Invalid move");
+            return;
+        }
+
+        grid[fromRow][fromCol] = piece;
+        grid[fromRow][fromCol] = '.'; // esvazia a casa antiga
     }
 }
 

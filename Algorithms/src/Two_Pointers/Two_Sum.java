@@ -4,12 +4,14 @@ package Two_Pointers;
 //return the indices of the two numbers such that they add up to target.
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 class Solution_By_Brute_Force {
     public int[] twoSum(int[] nums, int target) {
 
         int n = nums.length;
-
+        //(o)n^2
         for (int i = 0; i < n; i++) {  // loop de fora - linhas
             for (int j = i + 1; j < nums.length; j++) { // loop de dentro - colunas
                 if (nums[i] + nums[j] == target) {
@@ -21,6 +23,31 @@ class Solution_By_Brute_Force {
     }
 }
 
+class Solution_By_Hashmap {
+    public int[] twoSum(int[] nums, int target) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+        // chave   -> valor do array (nums[i])
+        // valor   -> índice i
+
+        for (int i = 0; i < nums.length; i++) {
+            //armazena o quanto falta para chegar no target
+            int complement = target - nums[i];
+
+            //verificar se esse complement existe no map
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
+            }
+
+            //salva o valor do complement no map
+            map.put(nums[i], i);
+        }
+        //se não achou nada, retorne um array vazio
+        return new int[]{};
+    }
+}
+
+
 public class Two_Sum {
     public static void main(String[] args) {
 
@@ -30,7 +57,7 @@ public class Two_Sum {
         Solution_By_Brute_Force solution = new Solution_By_Brute_Force();
         int[] result = solution.twoSum(nums, target);
 
-        // ✔️ Step 4: Print the result
+
         System.out.println(Arrays.toString(result));
     }
 }

@@ -1,4 +1,4 @@
-package Two_Pointers;
+package Hashmap;
 
 //Given an array of integers nums and an integer target,
 //return the indices of the two numbers such that they add up to target.
@@ -23,7 +23,7 @@ class Solution_By_Brute_Force {
     }
 }
 
-class Solution_By_Hashmap {
+class Solution_By_Hashmap_Two_Sum {
     public int[] twoSum(int[] nums, int target) {
 
         Map<Integer, Integer> map = new HashMap<>();

@@ -1,7 +1,6 @@
 package Chess_game.Board_game;
 
 public class Piece {
-
     protected Position position;
     private Board board;
 
